@@ -20,6 +20,7 @@ module.exports = function(grunt) {
     // Setup tasks
     coffee:   require('./tasks/coffee')(paths),
     concat:   require('./tasks/concat')(paths),
+    bower_concat:   require('./tasks/bower-concat')(paths),
     uglify:   require('./tasks/uglify')(paths),
     copy:     require('./tasks/copy')(paths),
     
