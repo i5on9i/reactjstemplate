@@ -1,0 +1,20 @@
+{
+  "name": "reactjs-template",
+  "version": "0.01",
+  "authors": [
+    "i5on9i <gaedduck@gmail.com>"
+  ],
+  "description": "React with coffeescript",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "react": "~0.13.3"
+  }
+}
