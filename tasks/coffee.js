@@ -1,7 +1,10 @@
 module.exports = function (paths) {
 
+  'use strict';
+  
   var src = paths.src;
   var dest = paths.dest;
+  var src_jsx = paths.src_jsx;
 
   return {
     compile: {
@@ -11,7 +14,13 @@ module.exports = function (paths) {
       dest: dest + 'js/',
       ext: '.js'
     },
-
+    compile_need_jsx: {
+      expand: true,
+      cwd: src + 'coffee/',
+      src: ["**/*.coffee"],
+      dest: src_jsx,
+      ext: '.js'
+    },
 
     rename_compile:{
       expand: true,

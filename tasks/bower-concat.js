@@ -4,7 +4,7 @@ module.exports = function (paths) {
 
     return {
         all: {
-            dest: 'build/_bower.js',
+            dest: 'build/lib/_bower.js',
             cssDest: 'build/_bower.css',
             exclude: [
               'jquery',
