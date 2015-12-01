@@ -5,13 +5,15 @@ module.exports = function (paths) {
   var src = paths.src;
   var dest = paths.dest;
   var src_jsx = paths.src_jsx;
+  var src_out = paths.src_out;
+  
 
   return {
     compile: {
       expand: true,
       cwd: src + 'coffee/',
       src: ["**/*.coffee"],
-      dest: dest + 'js/',
+      dest: src_out + 'js/',
       ext: '.js'
     },
     compile_need_jsx: {

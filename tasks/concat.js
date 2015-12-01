@@ -1,8 +1,12 @@
 module.exports = function (paths) {
   var js_src = paths.src;
-  var js_dest = paths.dest;
+  var js_dest = paths.dest + 'js/';
+  var js_src_out = paths.src_out + 'js/';
+
   var newui_src = paths.src;
   var newui_mgmtportal_js_dst = paths.dest;
+
+
   
 
 
@@ -12,79 +16,42 @@ module.exports = function (paths) {
   }
 
   return {
-    // Task nimbus_build
-    nimbus_build:{
+    // Task build from src_out
+    build_from_src_out: {
       options: {
         separator: ';\n',
       },
-      files:[
-        // nimbus-related .js
+      files: [
+        // spike
         {
-          dest: newui_src + 'coffee/nimbus.js',
+          dest: js_dest + 'spike.js',
           src: [
-            newui_src + 'coffee/extensions.js',
-            newui_src + 'coffee/utils.js',
-            newui_src + 'coffee/datatables.js',
-            newui_src + 'coffee/widgets.js',
-            newui_src + 'coffee/charts.js',
-            newui_src + 'coffee/statswidgets.js',
-            newui_src + 'coffee/totalstatswidgets.js',
-            newui_src + 'coffee/wafwidgets.js'
-
-
+            js_src_out + 'utils.js',
+            js_src_out + 'spikecomm.js',
+            js_src_out + 'spikeview.js',
+            
+          ]
+        },
+        {
+          dest: js_dest + 'csrf.js',
+          src: [
+            js_src_out + 'csrf.js',
           ]
         }
+        // // jQuery UI Extras
+        // {
+        //   dest: js_dest + 'jquery-ui-extras.js',
+        //   src: paths([
+        //     'build/extensions_jquery-ui-extras.js', // This line is required
+        //     'libs/jquery-ui-1.10.4/jquery.ui.tooltip.js',
+        //     'libs/jquery-ui-1.10.4/jquery.ui.datepicker.js',
+        //     'build/extensions_jquery-ui.datepicker.js'
+        //   ])
+        // },
+
       ]
     },
 
-    // Task mgmtportal_full_build
-    mgmtportal_full_build : {
-      options: {
-        separator: ';\n',
-      },
-
-      files:[
-        // Bootstrap
-        {
-          dest: newui_mgmtportal_js_dst + 'bootstrap.js',
-          src: paths([
-            'libs/bootstrap-3.1.1/transition.js',
-            
-          ])
-        },
-
-        // PixelAdmin
-        {
-          dest: newui_mgmtportal_js_dst + 'pixel-admin.js',
-          src: paths([
-
-            // PixelAdmin App
-            'build/utils.js',
-            'build/app.js',
-            'build/events.js',
-
-            
-          ])
-        },
-
-        // Nimbus
-        {
-          dest: newui_mgmtportal_js_dst + 'mgmt-nimbus.js',
-          src: paths([
-            'build/nimbus_extensions.js',
-            'build/nimbus_utils.js',
-            'build/nimbus_datatables.js',
-            'build/nimbus_widgets.js',
-            'build/nimbus_charts.js',
-            'build/nimbus_statswidgets.js',
-            'build/nimbus_wafwidgets.js',
-            'build/nimbus_mgmtportal.js'
-
-
-          ])
-        }
-      ]
-    },
 
 
     // Task build
