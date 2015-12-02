@@ -22,13 +22,11 @@ module.exports = function (paths) {
         separator: ';\n',
       },
       files: [
-        // spike
+        // pmodum
         {
-          dest: js_dest + 'spike.js',
+          dest: js_dest + 'pmodum.js',
           src: [
-            js_src_out + 'utils.js',
-            js_src_out + 'spikecomm.js',
-            js_src_out + 'spikeview.js',
+            js_src_out + 'inv-gallery.js',
             
           ]
         },

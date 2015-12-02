@@ -31,6 +31,41 @@ module.exports = function (paths) {
       ]
 
     },
+
+    server_deploy_css:{
+      files:[
+        {
+          cwd: js_dest + "css",
+          src: "**/*",
+          dest: js_server_dest + 'css',
+
+          expand : true
+        },
+      ]
+    },
+
+    server_deploy_html:{
+      files:[
+        {
+          cwd: js_dest + "html",
+          src: "**/*",
+          dest: js_server_dest + 'html',
+          expand : true
+        },
+      ]
+    },
+
+    to_build_html:{
+      files:[
+        {
+          cwd: js_src + "html",
+          src: ["*.html"],
+          dest: js_dest + 'html',
+          expand : true
+        },
+      ]
+    },
+    
     
     locale_for_test : {
       files:[
