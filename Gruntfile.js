@@ -30,6 +30,7 @@ module.exports = function(grunt) {
     copy:     require('./tasks/copy')(paths),
 
     babel: require('./tasks/babel')(paths),
+    sass: require('./tasks/sass')(paths),
     
   
   });
@@ -46,5 +47,7 @@ module.exports = function(grunt) {
   grunt.registerTask('bower_deploy', ['bower_concat:all', 'copy:server_deploy_bowerconcat']);  
 
   
+// sass
+  grunt.registerTask('sass-default', ['sass:main']);
 
 };
