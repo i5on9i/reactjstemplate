@@ -1,5 +1,10 @@
 doctype html
-html
+
+| <!--[if IE 8]>         <html class="ie8"> <![endif]-->
+| <!--[if IE 9]>         <html class="ie9 gt-ie8"> <![endif]-->
+| <!--[if gt IE 9]><!--> <html class="gt-ie8 gt-ie9 not-ie"> <!--<![endif]-->
+
+
   head
     meta(charset='UTF-8')
     title Gallery!
@@ -9,3 +14,5 @@ html
   body
     #content
     script(type='text/javascript', src='../js/pmodum.js')
+
+| </html>
