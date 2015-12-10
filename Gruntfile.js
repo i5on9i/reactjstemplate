@@ -31,6 +31,7 @@ module.exports = function(grunt) {
 
     babel: require('./tasks/babel')(paths),
     sass: require('./tasks/sass')(paths),
+    jade: require('./tasks/jade')(paths),
     
   
   });
@@ -43,7 +44,10 @@ module.exports = function(grunt) {
   grunt.registerTask('jsx_compiled_coffee', ['coffee:compile_need_jsx', 'babel:jsx']);
   
   // sass
-  grunt.registerTask('sass-default', ['sass:main']);
+  grunt.registerTask('sass_default', ['sass:main']);
+
+  // jade
+  grunt.registerTask('jade_default', ['jade:pretty']);
 
   // deploy
   grunt.registerTask('jsx_deploy', ['coffee:compile_need_jsx', 'babel:jsx', 'concat:build_from_src_out', 'copy:server_deploy_coffee']);
